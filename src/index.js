@@ -1,6 +1,7 @@
 import configureBugStore from "./store/configureStore";
-import { bugAdded, bugResolved, getUnresolvedBugs } from "./store/bugs";
+import { bugAdded, bugResolved, bugAssigned, getUnresolvedBugs } from "./store/bugs";
 import { projectAdded } from "./store/projects";
+import { userAdded, getUsersWithUnassignedBug } from "./store/users";
 
 
 const store = configureBugStore();
@@ -19,3 +20,7 @@ const x = getUnresolvedBugs(store.getState());
 const y = getUnresolvedBugs(store.getState());
 console.log("Unresolved bugs: ", x);
 console.log("Is x and y are same: ", x === y);
+store.dispatch(userAdded({name: "Reza Rabbani"}));
+store.dispatch(userAdded({name: "Rabbani"}));
+store.dispatch(bugAssigned({bugId: 1, userId: 2}));
+console.log("Users with assigned bug ", getUsersWithUnassignedBug(store.getState()));
