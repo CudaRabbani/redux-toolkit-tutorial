@@ -31,3 +31,7 @@
 - Define the actions [using createSlice from the redux toolkit]
 - Define the reducer [using createSlice from the redux toolkit]
 - Setup the store using configureStore
+
+### selector (some calculations are done and not updated until some state is changed)
+- let's say we want to get the list of unresolved bugs. If we create a function and filter through the bugs it going to repeat the same steps each time the function is called. To avaoid this we can use the package ```reselct```
+- ```npm i reselect```
