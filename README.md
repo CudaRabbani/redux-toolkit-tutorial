@@ -28,3 +28,6 @@
     ]
 ]
 ```
+- Define the actions [using createSlice from the redux toolkit]
+- Define the reducer [using createSlice from the redux toolkit]
+- Setup the store using configureStore
